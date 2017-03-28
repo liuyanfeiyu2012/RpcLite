@@ -1,0 +1,4 @@
+rootProject.name = 'RPCLite'
+include 'rpc-lite-core'
+include 'rpc-lite-sample'
+

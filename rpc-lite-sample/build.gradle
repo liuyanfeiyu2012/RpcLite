@@ -1,0 +1,30 @@
+group 'com.xxx'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'eclipse'
+apply plugin: 'jacoco'
+
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile project(":rpc-lite-core")
+
+    compile 'org.springframework:spring-context-support:4.3.3.RELEASE',
+            'org.springframework:spring-beans:4.3.3.RELEASE',
+            'org.springframework:spring-context:4.3.3.RELEASE',
+            'org.springframework:spring-aop:4.3.3.RELEASE',
+            'org.springframework:spring-expression:4.3.3.RELEASE'
+
+    compile 'org.slf4j:slf4j-api:1.7.6'
+    compile 'org.slf4j:slf4j-log4j12:1.7.6'
+
+    testCompile 'org.testng:testng:6.9.10',
+                'org.springframework:spring-test:4.3.3.RELEASE'
+}

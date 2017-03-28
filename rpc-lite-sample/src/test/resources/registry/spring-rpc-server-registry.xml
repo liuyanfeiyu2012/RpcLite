@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context-4.0.xsd
+		http://www.springframework.org/schema/util
+		http://www.springframework.org/schema/util/spring-util-4.0.xsd">
+
+    <context:property-placeholder ignore-unresolvable="true"
+                                  system-properties-mode="OVERRIDE"/>
+
+    <bean id="userServiceImpl" class="com.xxx.rpc.service.UserServiceImpl"/>
+    <bean id="wmServiceImpl" class="com.xxx.rpc.service.AccountServiceImpl"/>
+
+    <util:list id="registerServices">
+        <ref bean="userServiceImpl"/>
+        <ref bean="wmServiceImpl"/>
+    </util:list>
+
+    <bean id="7777RegisterConfig" class="com.xxx.rpclite.registry.entity.RegisterConfig"
+          p:clusterAddress="127.0.0.1:2181"
+          p:zookeeperNodePath="/com/xxx/distribute"
+          p:serviceName="rpclite"
+          p:host="127.0.0.1"
+          p:port="7777"/>
+
+    <bean id="8888RegisterConfig" class="com.xxx.rpclite.registry.entity.RegisterConfig"
+          p:clusterAddress="127.0.0.1:2181"
+          p:zookeeperNodePath="/com/xxx/distribute"
+          p:serviceName="rpclite"
+          p:host="127.0.0.1"
+          p:port="8888"/>
+
+    <bean id="9999RegisterConfig" class="com.xxx.rpclite.registry.entity.RegisterConfig"
+          p:clusterAddress="127.0.0.1:2181"
+          p:zookeeperNodePath="/com/xxx/distribute"
+          p:serviceName="rpclite"
+          p:host="127.0.0.1"
+          p:port="9999"/>
+
+    <bean id="exporter7777" class="com.xxx.rpclite.server.RpcServiceExporter" init-method="init"
+          p:port="7777"
+          p:workThreads="10"
+          p:registerServices-ref="registerServices"
+          p:registerConfig-ref="7777RegisterConfig"/>
+
+    <bean id="exporter8888" class="com.xxx.rpclite.server.RpcServiceExporter" init-method="init"
+          p:port="8888"
+          p:workThreads="10"
+          p:registerServices-ref="registerServices"
+          p:registerConfig-ref="8888RegisterConfig"/>
+
+    <bean id="exporter9999" class="com.xxx.rpclite.server.RpcServiceExporter" init-method="init"
+          p:port="9999"
+          p:workThreads="10"
+          p:registerServices-ref="registerServices"
+          p:registerConfig-ref="9999RegisterConfig"/>
+
+</beans>

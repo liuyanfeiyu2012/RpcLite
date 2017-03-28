@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/RPCLite.iml" filepath="$PROJECT_DIR$/.idea/modules/RPCLite.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/RPCLite_main.iml" filepath="$PROJECT_DIR$/.idea/modules/RPCLite_main.iml" group="RPCLite" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/RPCLite_test.iml" filepath="$PROJECT_DIR$/.idea/modules/RPCLite_test.iml" group="RPCLite" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/rpc-lite-core/rpc-lite-core.iml" filepath="$PROJECT_DIR$/.idea/modules/rpc-lite-core/rpc-lite-core.iml" group="rpc-lite-core" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/rpc-lite-core/rpc-lite-core_main.iml" filepath="$PROJECT_DIR$/.idea/modules/rpc-lite-core/rpc-lite-core_main.iml" group="rpc-lite-core" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/rpc-lite-core/rpc-lite-core_test.iml" filepath="$PROJECT_DIR$/.idea/modules/rpc-lite-core/rpc-lite-core_test.iml" group="rpc-lite-core" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/rpc-lite-sample/rpc-lite-sample.iml" filepath="$PROJECT_DIR$/.idea/modules/rpc-lite-sample/rpc-lite-sample.iml" group="rpc-lite-sample" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/rpc-lite-sample/rpc-lite-sample_main.iml" filepath="$PROJECT_DIR$/.idea/modules/rpc-lite-sample/rpc-lite-sample_main.iml" group="rpc-lite-sample" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/rpc-lite-sample/rpc-lite-sample_test.iml" filepath="$PROJECT_DIR$/.idea/modules/rpc-lite-sample/rpc-lite-sample_test.iml" group="rpc-lite-sample" />
+    </modules>
+  </component>
+</project>

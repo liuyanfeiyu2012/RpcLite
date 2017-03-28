@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context-4.0.xsd
+		http://www.springframework.org/schema/util
+		http://www.springframework.org/schema/util/spring-util-4.0.xsd">
+
+    <context:property-placeholder ignore-unresolvable="true"
+                                  system-properties-mode="OVERRIDE"/>
+
+    <bean id="userServiceImpl" class="com.xxx.rpc.service.UserServiceImpl"/>
+    <bean id="accountServiceImpl" class="com.xxx.rpc.service.AccountServiceImpl"/>
+
+    <util:list id="registerServices">
+        <ref bean="userServiceImpl"/>
+        <ref bean="accountServiceImpl"/>
+    </util:list>
+
+    <bean class="com.xxx.rpclite.server.RpcServiceExporter" init-method="init"
+          p:port="8888"
+          p:workThreads="5"
+          p:registerServices-ref="registerServices"/>
+
+</beans>

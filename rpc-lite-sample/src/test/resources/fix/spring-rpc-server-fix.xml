@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+		http://www.springframework.org/schema/util
+		http://www.springframework.org/schema/util/spring-util-4.0.xsd">
+
+    <bean id="userServiceImpl" class="com.xxx.rpc.service.UserServiceImpl"/>
+    <bean id="wmServiceImpl" class="com.xxx.rpc.service.AccountServiceImpl"/>
+
+    <util:list id="registerServices">
+        <ref bean="userServiceImpl"/>
+        <ref bean="wmServiceImpl"/>
+    </util:list>
+
+    <bean id="exporter7777" class="com.xxx.rpclite.server.RpcServiceExporter" init-method="init"
+          p:port="7777"
+          p:workThreads="10"
+          p:registerServices-ref="registerServices"/>
+
+    <bean id="exporter8888" class="com.xxx.rpclite.server.RpcServiceExporter" init-method="init"
+          p:port="8888"
+          p:workThreads="10"
+          p:registerServices-ref="registerServices"/>
+
+    <bean id="exporter9999" class="com.xxx.rpclite.server.RpcServiceExporter" init-method="init"
+          p:port="9999"
+          p:workThreads="10"
+          p:registerServices-ref="registerServices"/>
+
+</beans>
